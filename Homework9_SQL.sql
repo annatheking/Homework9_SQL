@@ -101,7 +101,7 @@ from film a join film_actor b on a.film_id = b.film_id
 group by a.title;
 
 # 6d. How many copies of the film Hunchback Impossible exist in the inventory system?
-select * from inventory;
+#select * from inventory;
 
 select a.title
 	, count(b.inventory_id) as Inventory_Count 
@@ -110,8 +110,8 @@ where title = "Hunchback Impossible";
 
 # 6e. Using the tables payment and customer and the JOIN command, list the total paid by each customer. 
 # List the customers alphabetically by last name:
-select * from customer;
-select * from payment;
+#select * from customer;
+#select * from payment;
 
 select a.first_name
 	, a.last_name
@@ -134,10 +134,10 @@ where actor_id in (select actor_id from film where title = "Alone Trip");
 
 # 7c. You want to run an email marketing campaign in Canada, for which you will need the names and email addresses of all 
 # Canadian customers. Use joins to retrieve this information.
-select * from customer;
-select * from address;
-select * from country;
-select * from city;
+#select * from customer;
+#select * from address;
+#select * from country;
+#select * from city;
 
 select a.first_name
 	, a.last_name
@@ -149,9 +149,9 @@ from customer a join address b on a.address_id = b.address_id
 
 # 7d. Sales have been lagging among young families, and you wish to target all family movies for a promotion. 
 # Identify all movies categorized as family films.
-select * from film;
-select * from film_category;
-select * from category;
+#select * from film;
+#select * from film_category;
+#select * from category;
 
 select a.title
 	, c.name
@@ -159,9 +159,9 @@ from film a join film_category b on a.film_id = b.film_id
 	join category c on b.category_id = c.category_id and c.name = "Family";
 
 # 7e. Display the most frequently rented movies in descending order.
-select * from rental;
-select * from inventory;
-select * from film;
+#select * from rental;
+#select * from inventory;
+#select * from film;
 
 select a.title
 	, count(c.rental_id) as Frequency
@@ -171,9 +171,9 @@ group by a.title
 order by Frequency desc;
     
 # 7f. Write a query to display how much business, in dollars, each store brought in.
-select * from store;
-select * from customer;
-select * from payment;
+#select * from store;
+#select * from customer;
+#select * from payment;
 
 select c.store_id
 	, sum(b.amount) as Total_Business
@@ -191,11 +191,11 @@ from store a join address d on a.address_id = d.address_id
 
 # 7h. List the top five genres in gross revenue in descending order. (Hint: you may need to use the following tables: 
 # category, film_category, inventory, payment, and rental.)
-select * from category;
-select * from film_category;
-select * from inventory;
-select * from payment;
-select * from rental;
+#select * from category;
+#select * from film_category;
+#select * from inventory;
+#select * from payment;
+#select * from rental;
 
 select c.name
 	#, a.title
